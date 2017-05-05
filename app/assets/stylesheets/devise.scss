@@ -1,0 +1,39 @@
+.sign-In-welcome{
+  border-right: 1px solid #FF690F;
+    padding-top: 15%;
+      padding-bottom: 15%;
+}
+.sign-In-welcome h3{
+
+  font-family: Merriweather;
+  font-size: 62px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color:  #FF690F;
+
+}
+.sign-In-welcome h5{
+  font-family: Merriweather;
+  font-size: 22px;
+  text-transform: capitalize;
+  color:  black;
+
+}
+.sign-In-form{
+  padding-top: 15%;
+    padding-bottom: 15%;
+
+}
+.sign-In-form input{
+  margin-bottom: 20px;
+}
+.sign-In-form .actions input{
+  background: #FF690F;
+  color: white;
+  width: 40%;
+  padding: 1% 5%;
+  font-size: 18px;
+  font-weight: bold;
+  border: 1px solid #FF690F; 
+
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<div class="container-fluid discover">
+    <!-- container for the search -->
+    <div class="container search">
+        <%= form_tag(houses_path, :method => "get", id: "search-form") do %>
+
+        <div class="input-group input-group-lg">
+
+            <%= text_field_tag :search, params[:search], placeholder: "Search for a location.....", class:"form-control"%>
+
+            <span class="input-group-btn">
+
+                <%= submit_tag "Search", :name => nil, class:"btn btn-default btn-lg" %>
+
+            </span>
+
+        </div>
+        <% end %>
+        <!-- alert the user that there aren't any matching houses -->
+        <% if @houses.blank? %>
+        <h4 class="no-house">There are no houses in
+            <%= params[:search] %>
+            location.</h4>
+        <% end %>
+
+    </div>
+    <!-- container for the search -->
+    <div class="container locations">
+
+
+  <div class="row location-area">
+    <%@houses.each do |house|%>
+    <!-- link to show -->
+    <%= link_to house_path(house), :action => 'go' do %>
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 img-thumbnail">
+      <div class="thumbnail">
+        <img <%= image_tag house.images[0].url%>
+      </div>
+      <h3><%= house.name%></h3>
+
+      <%# experiece ratings%>
+      <%=rating_for house, "experience", target:'#hintDiv',targetFormat: "Score: {score}", disable_after_rate: false%>
+      <div id="hintDiv"></div>
+
+      <h4>
+        <span class="house-location"><%= house.location%></span>
+        <span class="price">Ksh:<%= house.price%></span>
+      </h4>
+
+            </div>
+            <%end%>
+            <!-- end link -->
+            <%end%>
+        </div>
+    </div>
+
+</div>

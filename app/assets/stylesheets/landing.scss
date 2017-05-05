@@ -1,0 +1,115 @@
+.jumbotron{
+  margin: 0;
+  text-align: center;
+  align-items: center;
+  background:
+  linear-gradient(
+     rgba(0, 0, 0, 0.6),
+     rgba(0, 0, 0, 0.6)
+   ),
+   url('/homepageBg.jpg')no-repeat center center;
+   padding-top: 15%;
+   padding-bottom: 18.5%;
+
+}
+
+.header-lg-text h1{
+  color: white;
+  font-family: Roboto;
+  margin-bottom: 5%;
+  font-weight: bolder;
+
+}
+.header-lg-text input{
+width: 80%;
+font-size: 22px;
+font-family: Roboto;
+font-weight: bolder;
+background: rgba(255,255,255,0.9);
+letter-spacing: 1%;
+
+}
+
+.header-lg-text button{
+width: 150px;
+background: #FF690F;
+color: white;
+border: 1px solid #FF690F;
+
+}
+.header-lg-text button:hover{
+width: 150px;
+background: #FF690F;
+color: white;
+border: 1px solid #FF690F;
+}
+.how-to-use{
+  text-align: center;
+}
+.how-to-use h2{
+  font-family: Roboto;
+  color: black;
+  font-weight: bolder;
+  text-transform: capitalize;
+  border-bottom: 1px solid #FF690F;
+  margin-bottom: 3%;
+  padding-bottom: 2%;
+}
+.how-to-use h3{
+  font-family: Roboto;
+  color: black;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-bottom: 3px solid #FF690F;
+  margin-bottom: 3%;
+  padding-bottom: 2%;
+}
+.how-to-use h5{
+  font-family: Roboto;
+  color: #FF690F;
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 22px;
+  margin-bottom: 3%;
+  padding-bottom: 2%;
+}
+.locations{
+  text-align: center;
+  margin-top: 5%;
+}
+.locations h1{
+  font-family: Roboto;
+  font-weight: bolder;
+  text-transform: capitalize;
+  margin-bottom: 3%;
+}
+.locations h2{
+  font-family: Roboto;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: white;
+  font-size: 50px;
+  border-bottom: 1px solid #FF690F;
+  letter-spacing: 2px;
+
+}
+.imagesPadding{
+  padding-top: 15%;
+  padding-bottom: 15%;
+
+}
+.nairobi{
+  background:
+   linear-gradient(
+       rgba(0, 0, 0, 0.6),
+       rgba(0, 0, 0, 0.6)
+     ),
+     url('/nairobi.jpg')no-repeat center center;
+}
+.nakuru{
+  background:
+   linear-gradient(
+       rgba(0, 0, 0, 0.6),
+       rgba(0, 0, 0, 0.6)
+     ),
+}

@@ -1,0 +1,15 @@
+<div class="container locations">
+      <div class="row">
+        <h1>Popular destinations</h1>
+      </div>
+
+      <div class="col-sm-12 col-md-12 col-lg-12 nairobi imagesPadding">
+          <h2>Nairobi</h2>
+      </div>
+      <% @regions.each do |region|%>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 nakuru imagesPadding" style="background-image: url('<%= region.image.url %>'); width: 50%;">
+        
+            <h2><%= region.name%></h2>
+        </div>
+      <% end %>
+  </div>

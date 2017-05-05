@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Manyatta</title>
-    <%= csrf_meta_tags %>
+    <head>
+        <title>Manyatta</title>
+        <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+      <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+        <script src="https://use.fontawesome.com/5e20327b09.js"></script>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLEMAP_API_KEY']%>&callback=initMap">
+        </script>
+    </head>
 
-  <body>
-    <%= yield %>
-  </body>
+    <body>
+        <div class="row">
+          <div class="container-fluid">
+            <%= render("/layouts/navbar")%>
+          </div>
+        </div>
+        <div class="row" >
+          <div class="container-fluid">
+
+          <div id="content">
+
+          <% if notice %>
+          <div id="notice_wrapper">
+            <p class="notice"><%= notice %></p>
+          </div>
+          <% elsif alert%>
+            <div id="notice_wrapper">
+              <p class="alert"><%= alert %></p>
+            </div>
+          <% end %>
+              <%= yield %>
+            </div>       
+          </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= render("/layouts/footer")%>
+        </div>
+    </body>
 </html>

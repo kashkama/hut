@@ -1,0 +1,57 @@
+// Place all the styles related to the profile controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.profile {
+  text-align: center;
+  margin-top: 8%;
+
+  margin-bottom: 5%;
+}
+
+.profile img {
+  border: 3px solid #FF690F;
+  padding: 1%;
+}
+
+.profile h4 {
+  font-size: 23px;
+  font-weight: 400;
+  font-family: Roboto;
+}
+
+.nav-tabs {
+  background: #FF690F;
+  border: none;
+  margin-bottom: 5%;
+}
+
+.nav-tabs li a {
+  border: 1px solid white;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Roboto;
+}
+
+.nav-tabs li a:hover {
+  background: #FF690F;
+}
+.edit-btn {
+text-align: center;
+}
+.edit-btn a {
+width: 200px;
+padding: 0.5% 2%;
+text-transform: capitalize;
+font-size: 16px;
+font-weight: bold;
+background-color:#FF690F;
+border:1px solid #FF690F;
+}
+.edit-btn a:hover{
+background-color:#FF690F;
+border:1px solid #FF690F;
+
+}
+/*********************************************************/

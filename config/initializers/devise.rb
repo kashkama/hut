@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '4c684ef468fdcd3b78a2a98cb72c007f96d222715c274bad14b810823cca1e626846f5a1a7450cb067a8c69a2dd43f995c91772028fa5ecd96ca617acf992cf3'
+  # config.secret_key = '98ddc5c920558c447d49642f8aebb6b6105f813a857276460ade7c3ffb2710f31ba14ae28c7920a53d7b246fd97c1453b2cd99785269717a118122f034f2f9bd'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -25,6 +25,7 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
+  require "omniauth-google-oauth2"
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -108,7 +109,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'bd39e5fc958fd13324ce79fb0a48b086b988663d2fa864c5b067eddea0c2ef3e987f06e1037ea9e2a99b5d96e5abeda7bec2ba86503ce5d074ffe467fe31ffd6'
+  # config.pepper = '1722057dd2f951722bbc6d12dc058a40ae4d9596b19107c8d5725bc0ecb05dbb69fa6393f4f5f4ca70859786c22a0bc1b1c60c3d722ec75ea0a725df56cf11ee'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -274,4 +275,6 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+  config.omniauth :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"]
+  config.omniauth :facebook, ENV["FACEBOOK_CLIENT_ID"], ENV["FACEBOOK_CLIENT_SECRET"]
 end

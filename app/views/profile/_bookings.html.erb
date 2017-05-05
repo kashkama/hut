@@ -1,0 +1,21 @@
+<!-- show the booking tab contents if the current user has any bookings -->
+<% current_user.bookings.each do |booking|%>
+  <%= booking.house.name%>:
+  <%= booking.house.location%>
+
+  <p>
+    <strong>Checkin:</strong>
+    <%= booking.checkin %>
+  </p>
+
+  <p>
+    <strong>Checkout:</strong>
+    <%= booking.checkout %>
+  </p>
+
+  <p>
+    <strong>Occupancy:</strong>
+    <%= booking.occupancy %>
+  </p>
+  <br>
+<%end%>

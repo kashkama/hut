@@ -1,0 +1,37 @@
+<div class="profile">
+  <%= image_tag current_user.avatar.url(:medium) %>
+</div>
+<!-- Nav tabs -->
+<div class="row container-fluid">
+  <ul class="nav nav-tabs nav-justified" role="tablist">
+    <li role="presentation">
+      <a href="#bookings" aria-controls="bookings" role="tab" data-toggle="tab">Bookings</a>
+    </li>
+    <!-- show the house tab if the current user owns any houses -->
+
+    <%if current_user.houses.any?%>
+    <li role="presentation">
+      <a href="#houses" aria-controls="houses" role="tab" data-toggle="tab">Houses</a>
+    </li>
+    <%end%>
+    <li role="presentation" class="active">
+      <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Account settings</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes code -->
+  <div class="tab-content">
+    <div class="tab-pane fade " role="tabpanel" id="bookings">
+       <%= render("bookings")%>
+    </div>
+    <!-- show the house tab if the current user owns any houses -->
+    <div class="tab-pane fade " role="tabpanel" id="houses">
+       <%= render("houses")%>
+    </div>
+   <!-- panel for settings -->
+    <div class="tab-pane fade in active edit-btn" role="tabpanel" id="settings">
+      <%= link_to 'edit profile',  edit_user_registration_path, class:"btn btn-primary"%>
+    </div>
+
+  </div>
+</div>

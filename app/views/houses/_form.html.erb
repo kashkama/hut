@@ -1,0 +1,78 @@
+<%= form_for(house) do |f| %>
+<% if house.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(house.errors.count, "error") %>
+    prohibited this house from being saved:</h2>
+
+  <ul>
+    <% house.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+    <%= f.label :Region %>
+ <%= f.collection_select(:region_id, Region.all, :id, :name, :prompt => 'Select')%>
+</div>
+
+<div class="field">
+  <%= f.label :name %>
+  <%= f.text_field :name, class:"form-control" %>
+</div>
+
+<div class="field">
+  <%= f.label :description %>
+  <%= f.text_area :description, class:"form-control" %>
+</div>
+
+<div class="field">
+  <%= f.label :bedrooms %>
+  <%= f.number_field :bedrooms, class:"form-control" %>
+</div>
+
+<div class="field">
+  <%= f.label :minimumstay %>
+  <%= f.number_field :minimumstay, class:"form-control", placeholder: "minimum 1 day" %>
+</div>
+
+<div class="field">
+  <%= f.label :telephone %>
+  <%= f.number_field :telephone, class:"form-control" %>
+</div>
+
+<div class="field">
+  <%= f.label :location %>
+  <%= f.text_field :location, class:"form-control", placeholder:"please be descriptive"%>
+</div>
+
+<div class="field">
+  <%= f.label :street %>
+  <%= f.text_field :street, class:"form-control" %>
+</div>
+
+<div class="field">
+  <%= f.label :rules %>
+  <%= f.text_area :rules, class:"form-control" ,placeholder: "include rules for the house if any"%>
+</div>
+
+<div class="field">
+  <%= f.label :ammenities %>
+  <%= f.text_area :ammenities, class:"form-control" %>
+</div>
+
+<div class="field">
+  <%= f.label :price %>
+  <%= f.number_field :price, class:"form-control" ,placeholder: "in Ksh."%>
+</div>
+
+<div class="field">
+  <%= f.label :images%>
+  <%= f.file_field :images, multiple: true , class:"form-control"%>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>

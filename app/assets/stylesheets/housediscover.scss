@@ -1,0 +1,65 @@
+.no-house{
+  margin-top: 10%;
+}
+.discover{
+  margin-bottom: 10%;
+}
+.locations h1 {
+  font-family: Roboto;
+  font-size: 40px;
+  border-bottom: 1px solid #FF690F;
+  margin-top: 3%;
+  padding: 2%;
+  margin-bottom: 3%;
+}
+
+.img-thumbnail {
+  margin-right: 10px;
+}
+
+.locations h3 {
+  font-family: Roboto;
+  font-size: 28px;
+  text-transform: capitalize;
+}
+
+.locations h4 {
+  font-family: Roboto;
+  font-size: 18px;
+  text-transform: capitalize;
+  padding: 2%;
+  font-weight: bold;
+}
+
+.locations h4 .price {
+  color: #FF690F;
+  float: right;
+}
+
+.search {
+  margin-top: 2%;
+}
+
+.search input {
+  color: black;
+  font-size: 22px;
+}
+
+.search button {
+  width: 150px;
+  background: #FF690F;
+  color: white;
+  border: 1px solid #FF690F;
+}
+
+.search button:hover {
+  width: 150px;
+  background: #FF690F;
+  color: white;
+  border: 1px solid #FF690F;
+}
+
+.icons {
+  color: #FF690F;
+  padding-left: 2%;
+}

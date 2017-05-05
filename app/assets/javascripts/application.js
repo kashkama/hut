@@ -12,5 +12,34 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrap-sprockets
 //= require_tree .
+function adjust_textarea(h) {
+    h.style.height = "20px";
+    h.style.height = (h.scrollHeight) + "px";
+}
+
+          $(document).ready(function(){
+            setTimeout(function(){
+              $('#notice_wrapper').fadeOut("slow", function(){
+                $(this).remove();
+              })
+            }, 3500);
+          });
+        
+      //  maps in home#show
+      function initMap() {
+        var latd = parseFloat($('p#lat').text());
+        var lngd = parseFloat($('p#lng').text());
+        var house = {lat: latd, lng: lngd};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: house,
+          draggable: false
+        });
+        var marker = new google.maps.Marker({
+          position: house,
+          map: map
+        });
+      }
+  

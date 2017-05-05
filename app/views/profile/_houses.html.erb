@@ -1,0 +1,15 @@
+<!-- show the house tab if the current user owns any houses -->
+  <%current_user.houses.each do |house|%>
+  <p>
+    <strong>Name:</strong>
+    <%=house.name%>
+  </p>
+  <p>
+    <strong>Location:</strong>
+    <%=house.street%>
+  </p>
+  <p>
+    <strong>Price</strong>
+    <%=house.price%>
+  </p>
+  <%end%>

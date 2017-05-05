@@ -1,0 +1,146 @@
+// search
+.input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
+    z-index: 2;
+    margin-left: -1px;
+    padding-right: 30px;
+}
+// end search
+.top-title h2{
+  font-size: 42px;
+  font-family: Roboto;
+  text-transform: capitalize;
+  font-weight: 400;
+  padding-left: 2%;
+}
+//ratings
+img.raty-cancel {
+    display: none;
+ }
+
+#map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      }
+
+#location{
+  font-family: Roboto;
+  font-weight: 400;
+  padding-left: 3%;
+  color: #FF690F;
+  text-transform: capitalize;
+}
+.locationImage{
+  width: 100%;
+  height: 500px;
+  border: 2px solid #FF690F;
+}
+.details{
+  margin-top: 4%;
+  border-top: 1px solid #FF690F;
+  border-bottom: 1px solid #FF690F;
+  padding: 5%;
+
+}
+.details .title{
+  font-family: Roboto;
+  font-size: 38px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.details i{
+  text-align: center;
+  font-size: 50px;
+  color:#FF690F;
+
+}
+
+.title-about, .home-title h3{
+  font-family: Roboto;
+  font-size: 28px;
+  font-weight: 400;
+  text-transform: capitalize;
+  text-align: center;
+
+}
+.about{
+  margin-top: 5%;
+}
+
+.about-text{
+  margin-top: 5%;
+}
+.amenities h1{
+  font-family: Roboto;
+  font-size: 38px;
+  font-weight: 400;
+  text-transform: capitalize;
+  border: 2px solid #FF690F;
+  padding: 2%;
+}
+.amenities-list h4{
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+.amenities-list ul{
+  list-style-type: none;
+
+}
+.amenities-list ul li{
+display: inline-block;
+padding-left: 13%;
+
+}
+.review h1{
+  border-bottom: 1px solid #FF690F;
+  padding-bottom: 5%;
+}
+
+.review .write-review textarea{
+  border: 1px solid #FF690F;
+  margin-top: 3%;
+  margin-bottom: 2%;
+  font-size: 18px;
+  font-weight: bold;
+}
+.review .write-review button {
+  border: 1px solid #FF690F;
+  background: #FF690F;
+  color: white;
+  float: right;
+}
+.read-reviews{
+    margin-top: 10%;
+}
+.review .read-reviews h4 {
+
+    text-align: center;
+    font-family: Roboto;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: #FF690F;
+}
+.review .read-reviews .review-title {
+    text-align: center;
+    font-family: Roboto;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: black;
+
+}
+.new-house{
+  margin-top: 9%;
+  font-family: Merriweather;
+}
+.field input{
+  margin-bottom: 3%;
+}
+.actions input{
+  background: #FF690F ;
+  border: 1px solid  #FF690F;
+  color: white;
+  padding:0.5% 2%;
+}

@@ -1,0 +1,184 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Back', houses_path %>
+<div class="container">
+  <div class="row ">
+    <div class="row top-title">
+      <!-- title of home -->
+      <h2><%= @house.name %></h2>
+      <h3 id="location"><%= @house.location %>,<%= @house.street %></h3>
+      <!-- title of home -->
+    </div>
+
+    <!--  main content column -->
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+
+      <!-- image section -->
+      <!-- <img src="/kisumu.jpg" alt="kisumu" class="img-responsive locationImage"> -->
+      <!-- image section -->
+      <!-- images from database -->
+      <div class="row">
+        <%= render("houses/carousel")%>
+      </div>
+      <div class="row details">
+        <!-- details title -->
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 title">
+          <h3>Details :</h3>
+
+        </div>
+        <!-- details title -->
+        <!--  details list-->
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+
+          <div class="row">
+            <!-- house type -->
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+              <i class="fa fa-home" aria-hidden="true"></i>
+              <h5>House type</h5>
+            </div>
+            <!-- house type -->
+
+            <!-- house capacity -->
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+              <i class="fa fa-users" aria-hidden="true"></i>
+              <h5>House capacity</h5>
+            </div>
+            <!-- house capacity -->
+
+            <!-- house bedrooms -->
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+              <i class="fa fa-bed" aria-hidden="true"></i>
+              <h5>House bedrooms</h5>
+              <p><%= @house.bedrooms%></p>
+            </div>
+            <!-- house bedrooms -->
+
+            <!-- minimum stay -->
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+              <i class="fa fa-moon-o" aria-hidden="true"></i>
+              <h5>House minimum stay</h5>
+              <p><%= @house.minimumstay%></p>
+            </div>
+            <!-- minimum stay -->
+          </div>
+
+        </div>
+      </div>
+
+      <!--  details list-->
+
+      <!-- about property -->
+      <div class="row about">
+        <div class="row">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 title-about">
+            <h3>About property :</h3>
+          </div>
+
+          <%#<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 home-title">
+                                  <h3></h3>
+                              </div>%>
+        </div>
+        <div class="row  about-text well">
+          <p><%= @house.description %></p>
+        </div>
+
+      </div>
+      <!-- about property -->
+
+      <!-- amenities -->
+      <div class="row amenities">
+        <h1>Amenities</h1>
+        <div class="row amenities-list well">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <h4>Ammenity title:</h4>
+          </div>
+          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <p><%= @house.ammenities %></p>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- amenities -->
+      <%# house rules %>
+
+      <div class="row about">
+        <div class="row">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 title-about">
+            <h3>Rules :</h3>
+          </div>
+        </div>
+        <div class="row  about-text well">
+          <p><%= @house.rules %></p>
+        </div>
+
+      </div>
+      <%# house rules%>
+      <!-- reviews -->
+      <div class="row review">
+        <h1>Reviews</h1>
+        <div class="row write-review">
+          <%= form_for [@house,@review] do |f| %>
+          <% if @review.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(review.errors.count, "error") %>
+              prohibited this review from being saved:</h2>
+
+            <ul>
+              <% @review.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.label :comment %>
+            <%= f.text_area :comment, cols: "40", rows: "3", class: "form-control textarea", placeholder: "Write a review"%>
+          </div>
+
+          <div class="actions">
+            <%= f.submit 'send review', class: 'btn btn-default'%>
+          </div>
+          <% end %>
+        </div>
+        <div class="row read-reviews well">
+          <% @house.reviews.each do |review| %>
+          <div class="row">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+              <%= image_tag review.user.avatar.url(:medium), class: 'img-responsive img-thumbnail'%>
+              <h4><%= review.user.name%></h4>
+            </div>
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 review-title">
+              <h2><%= review.comment%></h2>
+            </div>
+          </div>
+          <% end %>
+        </div>
+
+      </div>
+      <!-- reviews -->
+
+    </div>
+    <!--  main content column -->
+    
+    <!-- booking form column -->
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      <%= render 'bookings/form', booking: @booking %>
+      <%=rating_for @house, "experience", target:'#hintDiv',targetFormat: "Score: {score}", disable_after_rate: false%>
+      <div id="hintDiv"></div>
+
+      <%# google map start...... %>
+      <p style="display:none;" id="lat"><%= @house.latitude%></p>
+      <p style="display:none;" id="lng"><%= @house.longitude%></p>
+    <h3><%= @house.name%> Map</h3>
+    <div id="map"></div>
+    
+    </div>
+    <%# .......google map end %>
+
+    <!-- booking form column -->
+
+  </div>
+
+</div>
