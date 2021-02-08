@@ -21,7 +21,7 @@ source 'https://rubygems.org'
   # gem 'jbuilder', '~> 2.5'
   gem 'cancancan', '~> 1.16'
   gem 'paperclip', '~> 5.1'
-  gem 'carrierwave', '~> 1.1'
+  gem 'carrierwave', '~> 1.3'
   # install rmagick sudo apt-get install imagemagick libmagickwand-dev locally
   gem 'rmagick', '~> 4.1.0.rc2'
   gem 'omniauth-oauth2', '~> 1.4.0'
